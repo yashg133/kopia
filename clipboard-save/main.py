@@ -1,4 +1,4 @@
-#! python3
+#!/usr/bin/python3
 import pyperclip
 import time
 import sys
@@ -14,6 +14,7 @@ def getText():
 		text = ''
 	return text
 
+
 def setFlag(prevText):
 	if prevText == getText():
 		flag = False
@@ -21,9 +22,11 @@ def setFlag(prevText):
 		flag = True
 	return flag
 
+
 def showHelp():
 	print("This is going to be the help")
 
+	
 def combine():
 	global content
 	text = ''
@@ -33,6 +36,7 @@ def combine():
 	pyperclip.copy(text)
 	print('[+] Combined text copied to clipboard\n')
 
+	
 def selectiveCombine():
 	selection = input('>>>>>> ')
 	selectionData = list(map(int, selection.split()))
@@ -47,6 +51,7 @@ def selectiveCombine():
 	pyperclip.copy(text)
 	print('[+] Seletively combined text copied to clipboard\n')
 
+	
 def showContent():
 	global content
 	j = 1
@@ -54,6 +59,7 @@ def showContent():
 		print('[{}] '.format(j)+i)
 		j=j+1
 
+		
 def getClipboardContent(quick=False):
 	global text, flag, content
 	try:
@@ -76,6 +82,7 @@ def getClipboardContent(quick=False):
 		if quick:
 			combine()
 
+			
 if __name__ == '__main__':
 	while True:
 		choice = input('[][][] ')
@@ -94,8 +101,3 @@ if __name__ == '__main__':
 		if choice.lower() == 'exit':
 			sys.exit()
 		time.sleep(1)
-
-		
-
-
-
